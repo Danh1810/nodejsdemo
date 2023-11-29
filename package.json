@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspector src/index.js",
+    "start": "nodemon  src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,9 +21,12 @@
   },
   "homepage": "https://github.com/Danh1810/nodejsdemo#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
-    "inspector": "^0.5.0"
+    "inspector": "^0.5.0",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
