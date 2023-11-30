@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/pulic/css/style.css">
+    <title>Document</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {background-color: coral;}
+        </style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/home">Home</a>
+        <a href="/list">List</a>
+        
+      </div>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th> Name</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>ACtion</th>
+        </tr>
+        <%= JSON.stringify(listUsers) %>
+        <% listUsers.forEach(function(user){ %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.city %></td>
+            <td>
+              <a href="/edit/<%= user.id %>">Edit </a>
+              <form  action ='/delete/<%= user.id %>' method="post"> <button> Delete </button></form>
+            </td>
+          </tr>
+        <% }) %>
+        
+      </table>
+</body>
+</html>
